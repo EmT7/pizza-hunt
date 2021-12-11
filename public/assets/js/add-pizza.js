@@ -44,7 +44,6 @@ const handlePizzaSubmit = event => {
   const size = $pizzaForm.querySelector('#pizza-size').value;
   const toppings = [...$pizzaForm.querySelectorAll('[name=topping]:checked')].map(topping => {
     return topping.value;
-    
   });
 
   if (!pizzaName || !createdBy || !toppings.length) {
@@ -52,6 +51,7 @@ const handlePizzaSubmit = event => {
   }
 
   const formData = { pizzaName, createdBy, size, toppings };
+
   fetch('/api/pizzas', {
     method: 'POST',
     headers: {
